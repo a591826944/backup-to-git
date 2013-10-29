@@ -41,7 +41,7 @@ fi
 file_name=${db_dbname}"_"$(date +%Y%m%d%H%M%S)
 #备份生成sql文件
 mysqldump -h $db_host -u $db_username -p$db_password $db_dbname > ${db_dump_path}${file_name}".sql"
-tar -zcPf ${db_dump_path}${file_name}".tar.gz" ${db_dump_path}${file_name}".sql"
+tar -C ${db_dump_path} -zcPf ${db_dump_path}${file_name}".tar.gz" ${file_name}".sql"
 #删除生成的sql文件
 rm -if ${db_dump_path}${file_name}".sql"
 ##########git提交操作##########
