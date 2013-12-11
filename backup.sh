@@ -48,4 +48,5 @@ rm -if ${db_dump_path}${file_name}".sql"
 cd $project_path
 git add .
 git commit -m "backup database to git"
+git pull
 git push
